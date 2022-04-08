@@ -16,15 +16,22 @@ public class TextBoxTest {
         Configuration.holdBrowserOpen = false;
         Configuration.baseUrl = "https://demoqa.com";
         open("https://demoqa.com");
-
     }
 
     String firstname = "Zhanna";
     String lastname = "Senchenko";
     String email = "zhanna_senchenko@gmail.com";
-    String number = "9856712322";
+    String number = "9852222222";
     String address = "Dybenko St, 6";
     String gender = "Female";
+    String picture = "cat.jpeg";
+    String day = "15";
+    String month = "July";
+    String year = "1990";
+    String subject = "History";
+    String hobby = "Reading";
+    String state = "Haryana";
+    String city = "Karnal";
 
     @Test
     void fillFormTest() {
@@ -39,43 +46,40 @@ public class TextBoxTest {
         $("#userEmail").setValue(email);
 
         $("#genterWrapper").$(byText(gender)).click();
-
         $("#userNumber").setValue(number);
 
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("July");
-        $(".react-datepicker__year-select").selectOption("1990");
-        $(byText("15")).click();
+        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__year-select").selectOption(year);
+        $(byText(day)).click();
 
-        $("#subjectsInput").setValue("History").pressEnter();
-
-        $("#hobbiesWrapper").$(byText("Reading")).click();
-
-        $("#uploadPicture").uploadFromClasspath("cat.jpeg");
-
+        $("#subjectsInput").setValue(subject).pressEnter();
+        $("#hobbiesWrapper").$(byText(hobby)).click();
+        $("#uploadPicture").uploadFromClasspath(picture);
         $("#currentAddress").setValue(address);
 
         $("#state").click();
-        $(byText("Haryana")).click();
+        $(byText(state)).click();
         $("#city").click();
-        $(byText("Karnal")).click();
+        $(byText(city)).click();
 
         $("[id=submit]").click();
 
-        // check
-        $(".modal-body").shouldHave(text(firstname),
+
+        $(".modal-body").
+                shouldHave(text(firstname),
                 text(lastname),
                 text(email),
                 text(gender),
                 text(number),
-                text("15"),
-                text("July"),
-                text("1990"),
-                text("History"),
-                text("Reading"),
-                text("cat.jpeg"),
+                text(day),
+                text(month),
+                text(year),
+                text(subject),
+                text(hobby),
+                text(picture),
                 text(address),
-                text("Haryana"),
-                text("Karnal"));
+                text(state),
+                text(city));
     }
 }
