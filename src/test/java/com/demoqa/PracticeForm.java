@@ -20,7 +20,7 @@ public class PracticeForm {
 
     String firstname = "Zhanna";
     String lastname = "Senchenko";
-    String email = "zhanna_senchenko@gmail.com";
+    String email = "me@gmail.com";
     String number = "9852222222";
     String address = "Dybenko St, 6";
     String gender = "Female";
