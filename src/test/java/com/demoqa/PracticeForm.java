@@ -63,11 +63,11 @@ public class PracticeForm {
         $("#city").click();
         $(byText(city)).click();
 
-        $("[id=submit]").click();
+        $("#submit").click();
 
 
-        $(".modal-body").
-                shouldHave(text(firstname),
+        $(".modal-body").shouldHave
+                (text(firstname),
                 text(lastname),
                 text(email),
                 text(gender),
