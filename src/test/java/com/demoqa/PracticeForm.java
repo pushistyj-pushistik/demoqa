@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTest {
+public class PracticeForm {
     @BeforeAll
     static void setUp() {
         Configuration.holdBrowserOpen = false;
