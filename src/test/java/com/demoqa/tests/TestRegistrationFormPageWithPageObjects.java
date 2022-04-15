@@ -13,9 +13,9 @@ public class TestRegistrationFormPageWithPageObjects {
     String  firstname = faker.name().firstName(),
             lastname = faker.name().lastName(),
             email = faker.internet().emailAddress(),
-            number = "9852222222",
             address = faker.address().streetAddress(),
             gender = "Female",
+            number = "9852123344",
             picture = "cat.jpeg",
             day = "15",
             month = "July",
@@ -29,14 +29,14 @@ public class TestRegistrationFormPageWithPageObjects {
     static void setUp() {
         Configuration.holdBrowserOpen = false;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1366х768";
-       // Selenide.zoom(0.75);
+        Configuration.browserSize = "1920x1080";
+
     }
 
     @Test
     void fillFormTest() {
-        RegistrationFormPage.openPage()
-                .setFirstName(firstname)
+        RegistrationFormPage.openPage();
+        RegistrationFormPage.setFirstName(firstname)
                 .setLastName(lastname)
                 .setEmail(email)
                 .setGender(gender)

@@ -41,7 +41,7 @@ public class TestRegistrationFormPageWithFaker {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
-        Selenide.zoom(0.75);
+      //  Selenide.zoom(0.75);
         Selenide.executeJavaScript(
                 "document.querySelector(\"footer\").hidden = 'true';" +
                         "document.querySelector(\"#fixedban\").hidden = 'true'");

@@ -44,7 +44,7 @@ public class RegistrationFormPage {
     }
 
     public RegistrationFormPage setUserNumber(String value) {
-        $("#userNumber").$(byText(value)).click();
+        $("#userNumber").setValue(value);
         return this;
     }
 
